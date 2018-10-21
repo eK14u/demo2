@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,6 +26,28 @@ public class StudentController {
     public String welcome(ModelMap model){
         model.put("content", "test");
         return "students";
+    }
+
+    @GetMapping("a")
+    public String a(ModelMap model){
+        model.put("content", "a");
+        return "a";
+    }
+
+    @PostMapping("b")
+    public void b(ModelMap model){
+        model.put("content", "b");
+    }
+
+    @GetMapping("c")
+    public String c(ModelMap model){
+        model.put("content", "c");
+        return "c";
+    }
+
+    @GetMapping("d")
+    public void d(ModelMap model){
+        model.put("content", "d");
     }
 
 }
